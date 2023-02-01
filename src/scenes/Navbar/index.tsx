@@ -1,10 +1,11 @@
 import {useState} from 'react'
 import {Bars3Icon, XMarkIcon} from '@heroicons/react/24/solid'
-import Logo from  '@/assets/Logo.png'
+import Logo from  '@/assets/HomePageText.png'
 import { Link } from './Link'
 import { SelectedPage } from '@/shared/types'
 import useMediaQuery from '@/hooks/useMediaQuery'
 import ActionButton from '@/shared/ActionButton'
+import {RiInstagramLine, RiWhatsappLine} from 'react-icons/ri'
 
 type  Props = {
   selectedPage: SelectedPage,
@@ -31,15 +32,17 @@ export const Navbar = ({selectedPage,setSelectedPage,isTopOfPage}: Props) => {
          {
           isAboveMediumScreens ? ( 
           <div className={`${flexBetween} w-full`}>
-            <div className={`${flexBetween} gap-8 text-sm`}>
+            <div className={`${flexBetween} gap-8`}>
               <Link page={SelectedPage.Home} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
               <Link page={SelectedPage.Benefits} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
               <Link page={SelectedPage.OurClasses} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
               <Link page={SelectedPage.ContactUs} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
             </div>
             <div className={`${flexBetween} gap-8`}>
+              <a href='https://www.instagram.com/advokat.stalbek/' target='_blank'><RiInstagramLine size={20}/></a>
+              <a href='https://api.whatsapp.com/send?phone=996702236900' target='_blank'><RiWhatsappLine size={20} /></a>
               <a href="tel:+996(702)236-900">+996(702)236-900</a>
-              <ActionButton setSelectedPage={setSelectedPage} >Become a member</ActionButton>
+              <ActionButton setSelectedPage={setSelectedPage} >Написать по почте</ActionButton>
             </div>
           </div>
           ) : (
@@ -61,10 +64,15 @@ export const Navbar = ({selectedPage,setSelectedPage,isTopOfPage}: Props) => {
               </button>
             </div>
             <div className={`ml-[33%] flex flex-col gap-10 text-2xl `}>
-              <Link page='Home' selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-              <Link page='Contact' selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-              <Link page='Our Classes' selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-              <Link page='Contact Us' selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+            <Link page={SelectedPage.Home} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+              <Link page={SelectedPage.Benefits} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+              <Link page={SelectedPage.OurClasses} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+              <Link page={SelectedPage.ContactUs} selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+            </div>
+            <div className={`ml-[14%] ${flexBetween} flex-col  gap-3 mt-[40px]`}>
+              <div className='flex gap-4'><a href='https://www.instagram.com/advokat.stalbek/' target='_blank'><RiInstagramLine size={20}/></a>
+              <a href='https://api.whatsapp.com/send?phone=996702236900' target='_blank'><RiWhatsappLine size={20} /></a></div>
+              <a href="tel:+996(702)236-900">+996(702)236-900</a>
             </div>
           </div>
         )

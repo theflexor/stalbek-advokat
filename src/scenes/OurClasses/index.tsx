@@ -4,10 +4,10 @@ import { SelectedPage } from '@/shared/types'
 import { ClassType } from '@/shared/types'
 import image1 from '@/assets/image1.png'
 import image2 from '@/assets/image2.png'
-import image3 from '@/assets/image3.png'
-import image4 from '@/assets/image4.png'
-import image5 from '@/assets/image5.png'
-import image6 from '@/assets/image6.png'
+import image3 from '@/assets/im3.jpg'
+import image4 from '@/assets/im6.jpg'
+import image5 from '@/assets/im5.jpg'
+import image6 from '@/assets/im7.jpg'
 import HText from '@/shared/HText'
 import Class from './Class'
 
@@ -17,37 +17,28 @@ type Props = {
 }
 
 const classes: Array<ClassType> = [
-    {
-        name: "Представительство в суде",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        image: image1,
-      },
+    // {
+    //     name: "Сертификаты",
+    //     name: "Сертификаты",
+    //     image: image1,
+    //   },
+    //   {
+    //     image: image2,
+    //   },
       {
-        name: "Семейные споры",
-        description: "Расторжение брака. Взыскание алиментов. <br> Перерасчёт алиментов. Порядок определения места жительства ребенка. Раздел имущества. Установление или оспаривание отцовства, материнства.",
-        image: image2,
-      },
-      {
-        name: "Наследство",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        name: "Сертификаты",
         image: image3,
       },
       {
-        name: "Защита чести и достоинства",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        name: "Сертификаты",
         image: image4,
       },
       {
-        name: "Имущественные споры",
+        name: "Сертификаты",
         image: image5,
       },
       {
-        name: "Административные споры",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        name: "Сертификаты",
         image: image6,
       },
 ]
@@ -65,12 +56,9 @@ const OurClasses = ({setSelectedPage}: Props) => {
                     visible: {opacity: 1, x: 0}
                 }}>
                     <div className='md:w-3/5'>
-                        <HText>OurClasses</HText>
+                        <HText>Дополнительно</HText>
                         <p className='py-5 '>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                            Possimus quisquam temporibus 
-                            laboriosam quam est, assumenda, alias ipsam voluptatem 
-                            eveniet veniam placeat? Quo, quas quia!
+                        Цивилизация привела к тому, что уже не важно, кто прав, <br /> а кто не прав; важно, чей адвокат лучше.
                         </p>
                     </div>
             </motion.div>

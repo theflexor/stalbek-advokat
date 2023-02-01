@@ -1,4 +1,6 @@
-import Logo from "@/assets/Logo.png";
+import Logo from "@/assets/HomePageText.png";
+import { AiOutlinePhone } from "react-icons/ai";
+import { RiInstagramLine, RiWhatsappLine } from "react-icons/ri";
 
 const Footer = () => {
   return (
@@ -7,22 +9,20 @@ const Footer = () => {
         <div className="mt-16 basis-1/2 md:mt-0">
           <img alt="logo" src={Logo} />
           <p className="my-5">
-            Lorem vitae ut augue auctor faucibus eget eget ut libero. Elementum
-            purus et arcu massa dictum condimentum. Augue scelerisque iaculis
-            orci ut habitant laoreet. Iaculis tristique.
+          Я адвокат, я ничего не допускаю,  но <br /> у общественного мнения нет диплома юриста.
           </p>
-          <p>© Evogym All Rights Reserved.</p>
+          <p>© StalbekAdvo All Rights Reserved.</p>
         </div>
         <div className="mt-16 basis-1/4 md:mt-0">
-          <h4 className="font-bold">Links</h4>
-          <p className="my-5">Massa orci senectus</p>
+          <h4 className="font-bold">Адрес</h4>
+          <p className="my-5">ул. Киевская, 62/1, Бишкек 720040</p>
           <p className="my-5">Et gravida id et etiam</p>
-          <p>Ullamcorper vivamus</p>
         </div>
         <div className="mt-16 basis-1/4 md:mt-0">
-          <h4 className="font-bold">Contact Us</h4>
-          <p className="my-5">Tempus metus mattis risus volutpat egestas.</p>
-          <p>(333)425-6825</p>
+          <h4 className="font-bold">Контакты</h4>
+          <p className="my-5">  <a className='flex  items-center gap-2' href="tel:+996(702)236-900"><AiOutlinePhone  size={20}/> +996(702)236-900</a></p>
+          <p className="my-5"><a className='flex  items-center gap-2' href='https://www.instagram.com/advokat.stalbek/' target='_blank'><RiInstagramLine size={20}/>Instagram</a></p>
+          <p className="my-5"><a className='flex  items-center gap-2' href='https://api.whatsapp.com/send?phone=996702236900' target='_blank'><RiWhatsappLine size={20} />Whatsapp</a></p>             
         </div>
       </div>
     </footer>

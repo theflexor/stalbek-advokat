@@ -4,13 +4,15 @@ import ContactUsPageGraphic from '@/assets/ContactUsPageGraphic.png'
 import { motion } from 'framer-motion'
 import HText from '@/shared/HText'
 import { useForm } from 'react-hook-form'
+import { RiInstagramLine, RiWhatsappLine } from 'react-icons/ri'
+import { AiOutlinePhone } from 'react-icons/ai'
 type Props = {
     setSelectedPage: (value: SelectedPage) => void
 }
 
 const ContactUs = ({setSelectedPage}: Props) => {
   const {trigger,register,formState: {errors}} = useForm()
-  const inputStyles =  `mt-5 p-2 w-full rounded-lg bg-primary-200 px-5 placeholder-white`
+  const inputStyles =  `mt-5 p-2 w-full rounded-lg bg-primary-200 px-5 placeholder-blue text-black`
   const onSubmit = async (e: any) => {
     const isValid = await trigger();
     if(!isValid){
@@ -28,13 +30,15 @@ const ContactUs = ({setSelectedPage}: Props) => {
                hidden: {opacity: 0, x: -100},
                visible: {opacity: 1, x: 0}
            }}>
-            <HText><span className='text-primary-500'>JOIN NOW</span></HText>
+            <HText><span className='text-primary-500'>Вы в поисках опытного юриста?</span></HText>
             <p className='py-5'>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Temporibus nostrum ipsa voluptatem 
-              et itaque eius eligendi dolor, repudiandae delectus deserunt quasi
-              modi sapiente! Dolor, qui.
+            Оставьте заявку и я свяжусь с вами.
             </p>
+            <div className='flex gap-5 flex-wrap'>
+              <a className='flex  items-center gap-2' href="tel:+996(702)236-900"><AiOutlinePhone size={30}/> +996(702)236-900</a>
+              <a className='flex  items-center gap-2' href='https://www.instagram.com/advokat.stalbek/' target='_blank'><RiInstagramLine size={30}/>Instagram</a>
+              <a className='flex  items-center gap-2' href='https://api.whatsapp.com/send?phone=996702236900' target='_blank'><RiWhatsappLine size={30} />Whatsapp</a>
+            </div>
         </motion.div>
         <div className='mt-10 justify-between gap-8 md:flex'>
             <motion.div className='mt-10 basis-3/5 md:mt-0'  
@@ -47,9 +51,9 @@ const ContactUs = ({setSelectedPage}: Props) => {
                 }}>
                   <form 
                     target='_blank' onSubmit={onSubmit}
-                    method='POST' action='https://formsubmit.co/008nurdan8@gmail.com'>
+                    method='POST' action='https://formsubmit.co/stalbek.kupeshev@gmail.com'>
                       <input type="text"className={inputStyles}
-                         placeholder='NAME' {...register('name', {required: true, maxLength: 100},)} />
+                         placeholder='ФИО' {...register('name', {required: true, maxLength: 100},)} />
                          {
                           errors.name && (
                             <p className='mt-1 text-primary-500'>
@@ -59,7 +63,7 @@ const ContactUs = ({setSelectedPage}: Props) => {
                           )
                          }
                       <input type="text"className={inputStyles}
-                         placeholder='EMAIL' {...register('email', 
+                         placeholder='Почта' {...register('email', 
                          {
                           required: true, 
                           pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i
@@ -76,7 +80,7 @@ const ContactUs = ({setSelectedPage}: Props) => {
                         rows={4}
                         cols={50}
 
-                         placeholder='MESSAGE' {...register('message', {required: true, maxLength: 100},)} /
+                         placeholder='Сообщение' {...register('message', {required: true, maxLength: 100},)} /
                          >
                          {
                           errors.message && (
@@ -86,7 +90,7 @@ const ContactUs = ({setSelectedPage}: Props) => {
                             </p>
                           )
                          }
-                         <button type='submit' className='mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 hover:text-white'>Send message</button>
+                         <button type='submit' className='mt-5 rounded-lg bg-secondary-500 px-20 py-3 transition duration-500 text-black  '>Отправить</button>
                     </form>
             </motion.div>
             <motion.div className='relative mt-16  basis-3/5 md:mt-0' 
@@ -98,10 +102,9 @@ const ContactUs = ({setSelectedPage}: Props) => {
                     visible: {opacity: 1, x: 0}
                 }}> 
               <div className='
-                md:before:content-evolvetext w-full 
-                before:absolute before:-bottom-20 before:-right-10 
-                before:z-[-1]'>
-                  <img className='aspect-[2.67/2]  object-cover object-bottom'  src={ContactUsPageGraphic} alt="contact-us-page-graphic" />
+
+                    before:z-[-1]'>
+                  <img className='aspect-[2.67/2] rounded-lg  object-cover object-bottom'  src={ContactUsPageGraphic} alt="contact-us-page-graphic" />
               </div>
             </motion.div>
         </div>

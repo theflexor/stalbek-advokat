@@ -6,6 +6,7 @@ import { Navbar } from "@/scenes/Navbar"
 import OurClasses from "@/scenes/OurClasses"
 import ContactUs from "@/scenes/ContactUs"
 import Footer from "./scenes/Footer"
+import Advantages from "./scenes/Advantages"
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
     <div className="app bg-gray-20">
       <Navbar isTopOfPage={isTopOfPage}  selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
       <Home setSelectedPage={setSelectedPage} />
+      <Advantages/>
       <Benefits setSelectedPage={setSelectedPage} />
       <OurClasses setSelectedPage={setSelectedPage}/>
       <ContactUs setSelectedPage={setSelectedPage}/>

@@ -7,6 +7,8 @@ import Benefit from '../Benefit'
 import HText from '@/shared/HText'
 
 import BenefitsPageGraphic from '@/assets/BenefitsPageGraphic.png'
+import { AiFillCar,AiOutlineFileProtect } from 'react-icons/ai'
+import { BsBuilding } from 'react-icons/bs'
 
 type Props = {
     setSelectedPage: (value: SelectedPage) => void
@@ -21,35 +23,40 @@ const container = {
 
 const benefits: Array<TypeBenefit> = [
     {
-        icon: <AcademicCapIcon className='h-6 w-6' />,
-        title: 'Семейное право:',
-        description: `Расторжение брака.
-        Взыскание алиментов.
-        Перерасчёт алиментов.
-        Порядок определения места жительства ребенка.
-        Раздел имущества.
-        Установление или оспаривание отцовства, материнства.`,
+        icon: <AiFillCar className='h-6 w-6' />,
+        title: 'Автоюрист',
+        description: `Взыскание ущерба в результате ДТП, у виновного в ДТП нет страховки, страховая компания отказывается выплачивать возмещение, виновный в ДТП покинул место происшествия, взыскание с виновника утраты товарно-материальной стоимости, оспаривание оценки (отчета об оценке ущерба).`,
+    },
+    {
+        icon: <UserGroupIcon className='h-6 w-6' />,
+        title: 'Семейный юрист',
+        description: 'Расторжение брака через суд (развод), взыскание алиментов, брачный договор, раздел имущества через суд, совместная собственность, порядок общение с детьми после развода, определение места жительства детей через суд, уменьшение размере алиментов, лишение родительских прав, опекунство и попечительства, признание через суд человека недееспособным, восстановление родительских прав.',
     },
     {
         icon: <HomeModernIcon className='h-6 w-6' />,
-        title: 'Работа на результат',
-        description: 'С высокой точностью оценим потенциальный успех судебного разбирательства.',
+        title: "Земельный юрист ",
+        description: 'Получение земельного участка от государства, землепользование, определение размера аренды земельного участка, предоставление земельного участка, обжалование решения земельной комиссии, строительство жилого дома на земельном участке, изменение целевого назначения земельного участка, порядок приватизации земельного участка, изъятие земельного участка для нужд государства.',
     },
     {
         icon: <UserGroupIcon className='h-6 w-6' />,
-        title: "Результативность ",
-        description: '97% - выигранных мной дел от поступивших.',
+        title: "Жилищный юрист",
+        description: 'Получение жилья от государства, приватизация государственного жилья (квартиры, дома), пользование общим жильем (общая собственность), определение доли от общего имущества через суд, ветхое жилье, аварийное жилье, долевое участие в строительстве жилья (ДДУ), выселение, вселение, изменение целевого назначения жилья на нежилое, перепланировка и переоборудование жилья.',
     },
     {
-        icon: <UserGroupIcon className='h-6 w-6' />,
-        title: "Результативность ",
-        description: '97% - выигранных мной дел от поступивших.',
-    }
+        icon: <AiOutlineFileProtect className='h-6 w-6' />,
+        title: "Юрист по защите прав",
+        description: 'Регистрация объектов авторского права, обжалование регистрации объектов авторского права в суде, защита имущественных авторских прав, взыскание компенсации по нарушенным авторским правам, восстановление нарушенных авторских прав через суд, юридические последствие нарушенных авторских прав.',
+    }, 
+    {
+        icon: <BsBuilding className='h-6 w-6' />,
+        title: "Строительный юрист",
+        description: 'Споры со строительными компаниями по договору долевого участия (ДДУ), взыскание неустойки (пени) по ДДУ, выход из членов кооператива (ЖСК), споры по неисполнению или надлежащему исполнению договора (ДДУ), нарушение сроков сдачи дома, возврат средств от застройщиков, не исполняющих договор.',
+    },
 ]
 
 const Benefits = ({setSelectedPage}: Props) => {
   return (
-    <section id={SelectedPage.Benefits} className='mx-auto min-h-full w-5/6 py-20'>
+    <section id={SelectedPage.Benefits} className='mx-auto min-h-full w-5/6 py-11 my-10'>
         <motion.div onViewportEnter={() => setSelectedPage(SelectedPage.Benefits)}>
             <motion.div 
                 initial='hidden'
@@ -60,16 +67,16 @@ const Benefits = ({setSelectedPage}: Props) => {
                     hidden: {opacity: 0, x: -100},
                     visible: {opacity: 1, x: 0}
                 }} className='md:my-5 md:w-3/5'>
-                <HText>Обо мне</HText>
+                <HText>Основные направление</HText>
                 <p className='my-5 text-sm'>Профессионально оцениваем ситуацию, защищаем интересы, <br /> восстанавливаем нарушенные права.
                 </p>
             </motion.div>
             <motion.div 
                 initial='hidden'
                 whileInView='visible'
-                viewport={{once: true, amount: 0.5}}
+                viewport={{once: true}}
                 variants={container}
-                className='md:flex xl:flex-wrap items-center justify-between gap-8 mt-5 '>
+                className='md:flex flex-wrap items-center justify-between gap-8 mt-5 '>
                 {
                     benefits.map((benefit) => (<Benefit key={benefit.title} {...benefit} setSelectedPage={setSelectedPage} />))
                 }
@@ -77,12 +84,11 @@ const Benefits = ({setSelectedPage}: Props) => {
         </motion.div>
         <div className='mt-16 items-center justify-between gap-20 md:mt-28 md:flex'>
             {/* img */}
-            <img className='mx-auto w-3/6' src={BenefitsPageGraphic} alt="BenefitsPageGraphic" />
+            <img className='mx-auto md:w-3/6' src={BenefitsPageGraphic} alt="BenefitsPageGraphic" />
             
             {/* description */}
-            <div>
+            <div className='mt-8'>
                 <div className='relative'>
-                    <div className='before:absolute before:-top-20 before:-left-20 before:z-1 before:content-abstractwaves'>
                         <motion.div
                             initial='hidden'
                             whileInView='visible'
@@ -97,7 +103,6 @@ const Benefits = ({setSelectedPage}: Props) => {
                                     <span className='text-primary-500'>мне</span>
                                 </HText>
                         </motion.div>
-                    </div>
                 </div>
 
                 <motion.div 
@@ -114,11 +119,6 @@ const Benefits = ({setSelectedPage}: Props) => {
 
                 </motion.div>
 
-                <div className='relative mt-16'>
-                    <div className='before:absolute before:-bottom-20 before:right-40 before:z-[-1] before:content-sparkles'>
-                        <ActionButton setSelectedPage={setSelectedPage}>Join Now</ActionButton>
-                    </div>
-                </div>
 
             </div>
         </div>
