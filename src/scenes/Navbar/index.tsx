@@ -16,8 +16,6 @@ type  Props = {
  
 
 export const Navbar = ({selectedPage,setSelectedPage,isTopOfPage}: Props) => {
-  console.log(isTopOfPage);
-  
   const flexBetween = 'flex items-center justify-between'
   const isAboveMediumScreens = useMediaQuery('(min-width: 1060px)')
 

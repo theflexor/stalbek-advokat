@@ -33,9 +33,8 @@ const Home = ({setSelectedPage}: Props) => {
                     <div className='relative'>
                             <h1 className='md:text-[40px] text-[30px] font-bold'>Адвокат Бишкек Сталбек Купешев</h1>
                     </div>
-                    <p className='mt-8 '>
-                    Если факты на твоей стороне — бей фактами. Если закон на твоей стороне — бей законом. Если на твоей стороне ни фактов, ни закона — бей кулаком по столу. 
-                    </p>
+                    <p className='mt-8'>
+                    Узнайте профессиональное мнение адвоката по вашему делу и получите ответы на свои вопросы.                    </p>
                 </motion.div>
                 <motion.div className='mt-8 flex items-center gap-8'  initial='hidden' whileInView='visible' 
                 viewport={{once:true, amount: 0.5}} 

@@ -8,7 +8,7 @@ const Advantages = (props: Props) => {
   return (
     <div className='w-full flex flex-wrap  bg-primary-100 py-15 py-10'>
     <div className='mx-auto w-5/6'>
-        <div className='flex items-center flex-wrap justify-between gap-8'>
+        <div className='flex items-center flex-wrap  justify-center gap-8'>
             <div className='flex justify-center flex-col items-center text-center'>
             <AiOutlineAim size={40}/>
             <p>100% гарантия <br /> качества</p>

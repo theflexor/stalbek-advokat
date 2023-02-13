@@ -12,7 +12,6 @@ import Advantages from "./scenes/Advantages"
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home)
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true)
-  console.log(selectedPage);
   
   useEffect(() => {
     const handleScroll  = () => {
